@@ -38,9 +38,22 @@ tabButtons.forEach((btn) => {
   });
 });
 
-// Pre-select formation in contact form when clicking a card CTA
+// Pre-select formation in contact form (via button or URL ?formation=...)
 const formationSelect = document.getElementById('formation');
 const contactSection = document.getElementById('contact');
+
+if (formationSelect) {
+  const params = new URLSearchParams(window.location.search);
+  const urlFormation = params.get('formation');
+  if (urlFormation) {
+    const matchOption = Array.from(formationSelect.options).find(
+      (opt) => opt.value.toLowerCase() === urlFormation.toLowerCase()
+    );
+    if (matchOption) {
+      formationSelect.value = matchOption.value;
+    }
+  }
+}
 
 document.querySelectorAll('.select-formation').forEach((btn) => {
   btn.addEventListener('click', () => {

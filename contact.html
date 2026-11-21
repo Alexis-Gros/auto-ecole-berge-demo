@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact, Horaires &amp; Accès (Manosque) | Auto-École Bergé</title>
+  <meta name="description" content="Contactez l'Auto-École Bergé au 18 Boulevard Élémir Bourges à Manosque (04100) ou au 04 92 72 06 94. Horaires d'ouverture et demande de rappel." />
+  <meta name="theme-color" content="#0f2744" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-bar">
+    <span>Aperçu personnalisé réalisé pour <strong>l'Auto-École Bergé (Manosque)</strong></span>
+    <a href="#contact">Tester la prise de contact</a>
+  </div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="Auto-École Bergé Accueil">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v6.5M3.5 14.5l6-2M20.5 14.5l-6-2"/></svg>
+        </span>
+        <span class="logo-text">
+          <strong>Auto-École Bergé</strong>
+          <small>Manosque · Depuis 1962</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav-menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="permis-auto.html">Permis Auto &amp; AAC</a>
+        <a href="permis-moto.html">Permis Moto</a>
+        <a href="inscription.html">Inscription</a>
+        <a href="contact.html" class="active">Contact &amp; Horaires</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:0492720694" class="btn btn-outline btn-sm">04 92 72 06 94</a>
+        <a href="#contact" class="btn btn-primary btn-sm">S'inscrire</a>
+        <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a> <span>/</span> <span>Contact &amp; Horaires</span>
+        </nav>
+        <h1>Nous contacter à Manosque</h1>
+        <p>Retrouvez nos horaires d'ouverture au 18 Boulevard Élémir Bourges ou demandez à être rappelé(e) rapidement.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div class="info-cards">
+            <div class="info-item">
+              <strong>Adresse</strong>
+              <span>18 Boulevard Élémir Bourges, 04100 Manosque</span>
+              <a href="https://www.google.com/maps/place/Auto+Ecole+Berge/@43.829423,5.7071979,16276m/data=!3m1!1e3!4m15!1m8!3m7!1s0x12cbcdb3ba6c6b09:0x1bd50854176f8011!2s04100+Manosque!3b1!8m2!3d43.835744!4d5.790916!16zL20vMDU5Y2g4!3m5!1s0x12cbcdb2052dd05b:0xc88a04ab1f3c8106!8m2!3d43.832169!4d5.7818189!16s%2Fg%2F1w0r2039?entry=ttu&g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-link">
+                Ouvrir Google Maps →
+              </a>
+            </div>
+
+            <div class="info-item">
+              <strong>Téléphone</strong>
+              <a href="tel:0492720694" class="phone-big">04 92 72 06 94</a>
+            </div>
+
+            <div class="info-item">
+              <strong>Horaires du bureau</strong>
+              <ul class="hours-list">
+                <li><strong>Lundi</strong><span>14h00 – 19h00</span></li>
+                <li><strong>Mardi</strong><span>17h00 – 19h00</span></li>
+                <li><strong>Mercredi</strong><span>10h00 – 12h00 · 14h00 – 19h00</span></li>
+                <li><strong>Jeudi</strong><span>14h00 – 19h00</span></li>
+                <li><strong>Vendredi</strong><span>14h00 – 19h00</span></li>
+                <li><strong>Samedi</strong><span>10h00 – 12h00 · 14h00 – 17h00</span></li>
+                <li><strong>Dimanche</strong><span>Fermé</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" id="contact">
+          <h3>Demander à être rappelé(e)</h3>
+          <p class="form-sub">Réponse rapide pour connaître les tarifs et créneaux disponibles.</p>
+
+          <form id="lead-form" class="lead-form">
+            <div class="form-group">
+              <label for="name">Nom et prénom</label>
+              <input type="text" id="name" name="name" placeholder="Ex : Lucas Martin" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" required />
+              </div>
+              <div class="form-group">
+                <label for="formation">Formation souhaitée</label>
+                <select id="formation" name="formation">
+                  <option value="Permis B">Permis B (Voiture)</option>
+                  <option value="Conduite Accompagnée (AAC)">Conduite Accompagnée (AAC)</option>
+                  <option value="Permis Moto (A1 / A2)">Permis Moto (A1 / A2)</option>
+                  <option value="Code de la route">Code de la route</option>
+                  <option value="Autre question">Autre question</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message (optionnel)</label>
+              <textarea id="message" name="message" rows="3" placeholder="Vos disponibilités ou questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full btn-lg">
+              Envoyer ma demande
+            </button>
+            <p class="form-note" id="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Auto-École Bergé</strong> — 18 Boulevard Élémir Bourges, 04100 Manosque · <a href="tel:0492720694">04 92 72 06 94</a>
+      </div>
+      <nav class="footer-links" aria-label="Liens rapides">
+        <a href="index.html">Accueil</a>
+        <a href="permis-auto.html">Permis Auto</a>
+        <a href="permis-moto.html">Permis Moto</a>
+        <a href="inscription.html">Inscription</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
