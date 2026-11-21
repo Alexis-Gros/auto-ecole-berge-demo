@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Permis Moto A1 / A2 &amp; 125 cm³ à Manosque | Auto-École Bergé</title>
   <meta name="description" content="Passez votre permis moto A2 ou A1 (125 cm³) à Manosque avec l'Auto-École Bergé (notée 4,9/5 sur Google)." />
-  <meta name="theme-color" content="#12263a" />
+  <meta name="theme-color" content="#0f2236" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +14,9 @@
 </head>
 <body>
   <div class="demo-bar">
-    <span>Maquette de présentation — <strong>Auto-École Bergé (Manosque)</strong></span>
-    <a href="contact.html#contact">Tester la prise de contact</a>
+    <span>Aperçu personnalisé — <strong>Auto-École Bergé (Manosque)</strong></span>
+    <a href="admin.html">⚙️ Espace Gérant (modifier prix &amp; véhicules)</a>
+    <a href="contact.html#contact">Tester le formulaire</a>
   </div>
 
   <header class="header">
@@ -40,7 +41,7 @@
 
       <div class="nav-actions">
         <a href="tel:0492720694" class="btn btn-outline btn-sm">04 92 72 06 94</a>
-        <a href="contact.html?formation=Permis+Moto+(A1+/+A2)#contact" class="btn btn-primary btn-sm">Nous contacter</a>
+        <a href="contact.html?formation=Permis+Moto+(A1+/+A2)#contact" class="btn btn-primary btn-sm">Être rappelé</a>
         <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -61,10 +62,11 @@
 
     <section class="section">
       <div class="container detail-grid">
-        <article class="detail-card">
+        <article class="detail-card featured">
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="motorbike" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Dès 18 ans</span>
           <h2>Permis A2 (Gros cube)</h2>
           <p>Accessible dès 18 ans pour conduire une moto jusqu'à 35 kW (47,5 ch). Préparation complète aux épreuves hors circulation et en circulation.</p>
           <ul class="mini-list">
@@ -79,6 +81,7 @@
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="gauge" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Dès 16 ans</span>
           <h2>Permis A1 (125 cm³)</h2>
           <p>Dès 16 ans pour conduire une motocyclette légère jusqu'à 125 cm³ (11 kW maximum).</p>
           <ul class="mini-list">
@@ -93,6 +96,7 @@
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="shield-check" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Sécurité</span>
           <h2>Équipement réglementaire</h2>
           <p>Pour les leçons comme pour l'examen, l'équipement homologué est obligatoire :</p>
           <ul class="mini-list">
@@ -102,6 +106,17 @@
           </ul>
           <a href="inscription.html" class="btn btn-outline btn-full">Voir les pièces d'inscription</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Tarifs indicatifs</span>
+          <h2>Formule Permis Moto</h2>
+          <p>Tarifs modifiables à tout moment depuis l'Espace Gérant.</p>
+        </div>
+        <div class="tarifs-grid" data-tarifs-grid data-tarifs-filter="moto"></div>
       </div>
     </section>
 
@@ -149,9 +164,31 @@
         <a href="permis-auto.html">Permis Auto</a>
         <a href="inscription.html">Inscription</a>
         <a href="contact.html">Contact</a>
+        <button type="button" class="legal-btn" data-open-legal>Mentions légales</button>
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar" aria-label="Actions rapides">
+    <a href="tel:0492720694" class="btn btn-outline btn-sm">Appeler</a>
+    <a href="contact.html?formation=Permis+Moto+(A1+/+A2)#contact" class="btn btn-accent btn-sm">Être rappelé</a>
+  </div>
+
+  <div class="modal-backdrop" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="legal-title">Mentions légales</h3>
+        <button type="button" class="modal-close" data-close-legal aria-label="Fermer">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div><strong>Établissement :</strong> Auto-École Bergé (NEVER GIVE UP)</div>
+        <div><strong>Adresse :</strong> 18 Boulevard Élémir Bourges, 04100 Manosque</div>
+        <div><strong>Téléphone :</strong> 04 92 72 06 94</div>
+        <div><strong>Email :</strong> huguet.jeanphilippea@yahoo.fr</div>
+        <div><strong>Activité :</strong> Enseignement de la conduite auto et moto à Manosque depuis 1962.</div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>

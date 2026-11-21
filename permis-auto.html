@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Permis B, Conduite Accompagnée (AAC) &amp; Code à Manosque | Auto-École Bergé</title>
   <meta name="description" content="Passez votre Permis B, Conduite accompagnée (AAC), Conduite supervisée ou Code de la route à Manosque avec l'Auto-École Bergé (4,9/5 sur Google)." />
-  <meta name="theme-color" content="#12263a" />
+  <meta name="theme-color" content="#0f2236" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +14,9 @@
 </head>
 <body>
   <div class="demo-bar">
-    <span>Maquette de présentation — <strong>Auto-École Bergé (Manosque)</strong></span>
-    <a href="contact.html#contact">Tester la prise de contact</a>
+    <span>Aperçu personnalisé — <strong>Auto-École Bergé (Manosque)</strong></span>
+    <a href="admin.html">⚙️ Espace Gérant (modifier prix &amp; véhicules)</a>
+    <a href="contact.html#contact">Tester le formulaire</a>
   </div>
 
   <header class="header">
@@ -40,7 +41,7 @@
 
       <div class="nav-actions">
         <a href="tel:0492720694" class="btn btn-outline btn-sm">04 92 72 06 94</a>
-        <a href="contact.html?formation=Permis+B#contact" class="btn btn-primary btn-sm">Nous contacter</a>
+        <a href="contact.html?formation=Permis+B#contact" class="btn btn-primary btn-sm">Être rappelé</a>
         <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -61,16 +62,17 @@
 
     <section class="section">
       <div class="container detail-grid">
-        <article class="detail-card">
+        <article class="detail-card featured">
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="car" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Dès 17 ans à l'examen</span>
           <h2>Permis B (Formation traditionnelle)</h2>
           <p>La formation complète à la conduite automobile : maîtrise mécanique, circulation en agglomération et hors agglomération, préparation à l'examen.</p>
           <ul class="mini-list">
             <li>Évaluation de départ pour déterminer votre volume prévisionnel</li>
             <li>Progression suivie étape par étape</li>
-            <li>Mises en situation d'examen sur le secteur</li>
+            <li>Mises en situation d'examen sur le secteur de Manosque</li>
           </ul>
           <a href="contact.html?formation=Permis+B#contact" class="btn btn-primary btn-full">Demander un renseignement Permis B</a>
         </article>
@@ -79,6 +81,7 @@
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="compass" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Dès 15 ans</span>
           <h2>Conduite Accompagnée (AAC)</h2>
           <p>Accessible dès 15 ans pour acquérir une réelle expérience routière avec un accompagnateur avant le passage de l'épreuve pratique.</p>
           <ul class="mini-list">
@@ -93,6 +96,7 @@
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="route" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Dès 18 ans</span>
           <h2>Conduite Supervisée</h2>
           <p>À partir de 18 ans, une formule souple pour continuer à conduire avec un proche après la formation initiale ou avant un nouveau passage.</p>
           <ul class="mini-list">
@@ -107,6 +111,7 @@
           <div class="icon-box" aria-hidden="true">
             <i data-lucide="book-open" width="20" height="20"></i>
           </div>
+          <span class="card-badge">Épreuve théorique</span>
           <h2>Code de la route (ETG)</h2>
           <p>Apprentissage de la réglementation et des situations de sécurité routière pour aborder l'examen théorique dans de bonnes conditions.</p>
           <ul class="mini-list">
@@ -116,6 +121,17 @@
           </ul>
           <a href="contact.html?formation=Code+de+la+route#contact" class="btn btn-outline btn-full">Se renseigner sur le Code</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Tarifs indicatifs</span>
+          <h2>Formules Voiture &amp; AAC</h2>
+          <p>Tarifs modifiables à tout moment depuis l'Espace Gérant.</p>
+        </div>
+        <div class="tarifs-grid" data-tarifs-grid data-tarifs-filter="auto"></div>
       </div>
     </section>
 
@@ -156,9 +172,31 @@
         <a href="permis-moto.html">Permis Moto</a>
         <a href="inscription.html">Inscription</a>
         <a href="contact.html">Contact</a>
+        <button type="button" class="legal-btn" data-open-legal>Mentions légales</button>
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar" aria-label="Actions rapides">
+    <a href="tel:0492720694" class="btn btn-outline btn-sm">Appeler</a>
+    <a href="contact.html?formation=Permis+B#contact" class="btn btn-accent btn-sm">Être rappelé</a>
+  </div>
+
+  <div class="modal-backdrop" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="legal-title">Mentions légales</h3>
+        <button type="button" class="modal-close" data-close-legal aria-label="Fermer">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div><strong>Établissement :</strong> Auto-École Bergé (NEVER GIVE UP)</div>
+        <div><strong>Adresse :</strong> 18 Boulevard Élémir Bourges, 04100 Manosque</div>
+        <div><strong>Téléphone :</strong> 04 92 72 06 94</div>
+        <div><strong>Email :</strong> huguet.jeanphilippea@yahoo.fr</div>
+        <div><strong>Activité :</strong> Enseignement de la conduite auto et moto à Manosque depuis 1962.</div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>

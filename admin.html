@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espace Gérant — Modifier tarifs &amp; véhicules | Auto-École Bergé</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-bar">
+    <span><strong>Espace Gérant (Démo)</strong> — Modifiez vos prix et véhicules sans aucune connaissance technique</span>
+    <a href="index.html">← Retourner voir le site</a>
+  </div>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="Auto-École Bergé Accueil">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v6.5M3.5 14.5l6-2M20.5 14.5l-6-2"/></svg>
+        </span>
+        <span class="logo-text">
+          <strong>Auto-École Bergé</strong>
+          <small>Espace Gérant · Gestion autonome</small>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline btn-sm">Voir le site</a>
+        <button type="button" class="btn btn-accent btn-sm" id="btn-save-preview">Enregistrer &amp; voir sur le site</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <div class="container">
+      <div class="admin-topbar">
+        <div>
+          <h1>Gestion des tarifs, véhicules &amp; financements</h1>
+          <p>Vos modifications sont visibles immédiatement sur le site. Aucune compétence informatique requise.</p>
+        </div>
+        <div class="admin-actions-bar">
+          <button type="button" class="btn btn-outline btn-sm" id="btn-export-json">Exporter la configuration (.json)</button>
+          <button type="button" class="btn btn-outline btn-sm" id="btn-reset-demo">Réinitialiser</button>
+        </div>
+      </div>
+
+      <div class="admin-tabs" role="tablist">
+        <button type="button" class="admin-tab-btn active" data-admin-tab="tarifs" role="tab" aria-selected="true">Tarifs &amp; Forfaits</button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="vehicules" role="tab" aria-selected="false">Véhicules de l'école</button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="reglages" role="tab" aria-selected="false">Financements &amp; Formulaire Email</button>
+      </div>
+
+      <section class="admin-panel active" id="panel-tarifs">
+        <div class="admin-cards" id="admin-tarifs-list"></div>
+        <div style="margin-top: 1.25rem;">
+          <button type="button" class="btn btn-outline" id="btn-add-tarif">+ Ajouter un nouveau forfait</button>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panel-vehicules">
+        <div class="admin-cards" id="admin-vehicules-list"></div>
+        <div style="margin-top: 1.25rem;">
+          <button type="button" class="btn btn-outline" id="btn-add-vehicule">+ Ajouter un véhicule</button>
+        </div>
+      </section>
+
+      <section class="admin-panel" id="panel-reglages">
+        <div class="admin-cards">
+          <div class="admin-item-card">
+            <div class="admin-item-head">
+              <strong>Financements affichés sur le site</strong>
+            </div>
+            <p style="margin: 0 0 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
+              Cochez les solutions que vous acceptez à l'auto-école :
+            </p>
+            <div class="admin-toggle-row">
+              <label><input type="checkbox" id="fin-cpf" /> CPF (Compte Personnel de Formation)</label>
+              <label><input type="checkbox" id="fin-unEuro" /> Permis à 1 € par jour</label>
+              <label><input type="checkbox" id="fin-plusieursFois" /> Paiement en plusieurs fois</label>
+            </div>
+          </div>
+
+          <div class="admin-item-card">
+            <div class="admin-item-head">
+              <strong>Réception des demandes de rappel par email (Web3Forms)</strong>
+            </div>
+            <p style="margin: 0 0 0.9rem; color: var(--text-muted); font-size: 0.9rem;">
+              Pour recevoir directement les demandes du formulaire dans la boîte mail de l'auto-école (gratuit, sans serveur), créez une clé sur <strong>web3forms.com</strong> avec votre adresse email et collez-la ci-dessous :
+            </p>
+            <div class="form-group" style="max-width: 460px;">
+              <label for="input-web3forms">Clé d'accès Web3Forms (optionnel en démo)</label>
+              <input type="text" id="input-web3forms" placeholder="Ex : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite">Modifications enregistrées !</div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

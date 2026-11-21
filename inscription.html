@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inscription &amp; Pièces à fournir | Auto-École Bergé Manosque</title>
-  <meta name="description" content="Préparez votre inscription à l'Auto-École Bergé à Manosque : étapes du dossier ANTS, ePhoto et liste des documents à fournir." />
-  <meta name="theme-color" content="#12263a" />
+  <meta name="description" content="Préparez votre inscription à l'Auto-École Bergé à Manosque : étapes du dossier ANTS, ePhoto et liste interactive des documents à fournir." />
+  <meta name="theme-color" content="#0f2236" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +14,9 @@
 </head>
 <body>
   <div class="demo-bar">
-    <span>Maquette de présentation — <strong>Auto-École Bergé (Manosque)</strong></span>
-    <a href="contact.html#contact">Tester la prise de contact</a>
+    <span>Aperçu personnalisé — <strong>Auto-École Bergé (Manosque)</strong></span>
+    <a href="admin.html">⚙️ Espace Gérant (modifier prix &amp; véhicules)</a>
+    <a href="contact.html#contact">Tester le formulaire</a>
   </div>
 
   <header class="header">
@@ -40,7 +41,7 @@
 
       <div class="nav-actions">
         <a href="tel:0492720694" class="btn btn-outline btn-sm">04 92 72 06 94</a>
-        <a href="contact.html#contact" class="btn btn-primary btn-sm">Nous contacter</a>
+        <a href="contact.html#contact" class="btn btn-primary btn-sm">Être rappelé</a>
         <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -55,25 +56,53 @@
           <a href="index.html">Accueil</a> <span>/</span> <span>Inscription</span>
         </nav>
         <h1>Inscription et pièces à fournir</h1>
-        <p>Les justificatifs habituels pour ouvrir votre dossier au bureau du 18 boulevard Élémir Bourges.</p>
+        <p>Préparez votre dossier avant de passer au bureau du 18 boulevard Élémir Bourges grâce à cette check-list interactive.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container detail-grid">
-        <article class="detail-card">
+        <article class="detail-card featured">
+          <span class="card-badge">Check-list interactive</span>
           <h2>Pièces habituelles à apporter</h2>
-          <ul class="mini-list">
-            <li>Pièce d'identité en cours de validité (CNI ou passeport)</li>
-            <li>Justificatif de domicile de moins de 6 mois (et attestation d'hébergement + pièce d'identité de l'hébergeant si nécessaire)</li>
-            <li>Code <strong>ePhoto</strong> (photo + signature numérique réalisées en cabine agréée)</li>
-            <li>ASSR 2 (ou ASR) pour les candidats nés à partir de 1988</li>
-            <li>Certificat individuel de participation à la JDC (entre 17 et 25 ans)</li>
-          </ul>
+          <p>Cochez les documents que vous avez déjà réunis pour suivre l'avancement de votre dossier :</p>
+
+          <div class="checklist-progress-wrap">
+            <div class="checklist-progress-head">
+              <span id="checklist-count">0 / 5 pièces cochées</span>
+            </div>
+            <div class="checklist-bar">
+              <div class="checklist-bar-fill" id="checklist-bar-fill"></div>
+            </div>
+          </div>
+
+          <div class="checklist-items" id="doc-checklist">
+            <label class="checklist-item">
+              <input type="checkbox" data-doc-id="id" />
+              <span>Pièce d'identité en cours de validité (CNI ou passeport)</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" data-doc-id="domicile" />
+              <span>Justificatif de domicile de moins de 6 mois (ou attestation d'hébergement + CNI de l'hébergeant)</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" data-doc-id="ephoto" />
+              <span>Code <strong>ePhoto</strong> (photo + signature numérique en cabine agréée)</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" data-doc-id="assr" />
+              <span>ASSR 2 (ou ASR) pour les candidats nés à partir de 1988</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" data-doc-id="jdc" />
+              <span>Certificat individuel de participation à la JDC (entre 17 et 25 ans)</span>
+            </label>
+          </div>
         </article>
 
         <article class="detail-card">
-          <h2>Candidat mineur (AAC / A1)</h2>
+          <span class="card-badge">AAC &amp; Permis A1</span>
+          <h2>Candidat mineur</h2>
           <p>Pour la conduite accompagnée dès 15 ans ou le permis A1 dès 16 ans, prévoyez en complément :</p>
           <ul class="mini-list">
             <li>Présence ou autorisation écrite du représentant légal</li>
@@ -120,9 +149,31 @@
         <a href="permis-auto.html">Permis Auto</a>
         <a href="permis-moto.html">Permis Moto</a>
         <a href="contact.html">Contact</a>
+        <button type="button" class="legal-btn" data-open-legal>Mentions légales</button>
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-sticky-bar" aria-label="Actions rapides">
+    <a href="tel:0492720694" class="btn btn-outline btn-sm">Appeler</a>
+    <a href="contact.html#contact" class="btn btn-accent btn-sm">Être rappelé</a>
+  </div>
+
+  <div class="modal-backdrop" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="legal-title">Mentions légales</h3>
+        <button type="button" class="modal-close" data-close-legal aria-label="Fermer">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div><strong>Établissement :</strong> Auto-École Bergé (NEVER GIVE UP)</div>
+        <div><strong>Adresse :</strong> 18 Boulevard Élémir Bourges, 04100 Manosque</div>
+        <div><strong>Téléphone :</strong> 04 92 72 06 94</div>
+        <div><strong>Email :</strong> huguet.jeanphilippea@yahoo.fr</div>
+        <div><strong>Activité :</strong> Enseignement de la conduite auto et moto à Manosque depuis 1962.</div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>

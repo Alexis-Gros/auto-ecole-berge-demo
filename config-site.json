@@ -1,0 +1,99 @@
+{
+  "web3formsKey": "",
+  "financements": {
+    "cpf": true,
+    "unEuro": true,
+    "plusieursFois": true
+  },
+  "tarifs": [
+    {
+      "id": "permis-b",
+      "category": "auto",
+      "title": "Forfait Permis B",
+      "price": "1 190 €",
+      "subtitle": "20h de conduite + Code & accompagnement",
+      "features": [
+        "Évaluation de départ incluse",
+        "20 heures de conduite sur Renault Clio",
+        "Préparation au Code (ETG) & suivi ANTS",
+        "1 présentation à l'examen pratique"
+      ],
+      "highlighted": true,
+      "visible": true
+    },
+    {
+      "id": "aac",
+      "category": "auto",
+      "title": "Conduite Accompagnée (AAC)",
+      "price": "1 290 €",
+      "subtitle": "Dès 15 ans · Formation initiale + RDV pédagogiques",
+      "features": [
+        "Formation initiale 20h de conduite",
+        "Rendez-vous préalable + 2 RDV pédagogiques",
+        "Livret d'apprentissage & suivi complet",
+        "1 présentation à l'examen pratique"
+      ],
+      "highlighted": false,
+      "visible": true
+    },
+    {
+      "id": "moto-a2",
+      "category": "moto",
+      "title": "Permis Moto A2 / A1",
+      "price": "890 €",
+      "subtitle": "20h plateau & circulation sur Kawasaki Z500 / Z125",
+      "features": [
+        "8h hors circulation (plateau)",
+        "12h en circulation sur les routes du 04",
+        "Accompagnement aux examens plateau & route",
+        "Suivi personnalisé jusqu'à l'obtention"
+      ],
+      "highlighted": true,
+      "visible": true
+    },
+    {
+      "id": "code-seul",
+      "category": "code",
+      "title": "Forfait Code (ETG / ETM)",
+      "price": "190 €",
+      "subtitle": "Préparation théorique Auto ou Moto",
+      "features": [
+        "Séries d'entraînement conformes à l'examen",
+        "Corrections et explications au bureau",
+        "Tests blancs en conditions réelles",
+        "Accompagnement inscription ANTS / NEPH"
+      ],
+      "highlighted": false,
+      "visible": true
+    }
+  ],
+  "vehicules": [
+    {
+      "id": "renault-clio-6",
+      "category": "auto",
+      "name": "Renault Clio",
+      "badge": "Permis B · AAC · Supervisée",
+      "description": "Boîte manuelle, double commande et aides à la conduite récentes pour apprendre sereinement en ville comme sur route.",
+      "image": "assets/clio-auto.jpg",
+      "visible": true
+    },
+    {
+      "id": "kawasaki-z500",
+      "category": "moto",
+      "name": "Kawasaki Z500",
+      "badge": "Permis A2 (Gros cube)",
+      "description": "Roadster maniable et accessible, idéal pour maîtriser les épreuves plateau et prendre plaisir sur les routes du 04.",
+      "image": "assets/kawasaki-z500.jpg",
+      "visible": true
+    },
+    {
+      "id": "kawasaki-z125",
+      "category": "moto",
+      "name": "Kawasaki Z125",
+      "badge": "Permis A1 (125 cm³)",
+      "description": "Moto légère et rassurante pour débuter dès 16 ans en toute sécurité sur plateau et en circulation.",
+      "image": "assets/kawasaki-z125.jpg",
+      "visible": true
+    }
+  ]
+}
