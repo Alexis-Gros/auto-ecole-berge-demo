@@ -1,0 +1,26 @@
+[
+  {
+    "id": "renault-clio-6",
+    "category": "auto",
+    "name": "Renault Clio 6",
+    "badge": "Permis B · AAC · Supervisée",
+    "description": "Boîte manuelle, double commande et aides à la conduite pour apprendre sereinement en ville comme sur route.",
+    "image": ""
+  },
+  {
+    "id": "kawasaki-z500",
+    "category": "moto",
+    "name": "Kawasaki Z500",
+    "badge": "Permis A2",
+    "description": "Roadster maniable et accessible, idéal pour maîtriser les épreuves plateau et prendre plaisir sur les routes du 04.",
+    "image": ""
+  },
+  {
+    "id": "kawasaki-z125",
+    "category": "moto",
+    "name": "Kawasaki Z125",
+    "badge": "Permis A1 (125 cm³)",
+    "description": "Moto légère et rassurante pour débuter dès 16 ans en toute sécurité sur plateau et en circulation.",
+    "image": ""
+  }
+]

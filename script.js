@@ -79,3 +79,87 @@ if (leadForm && formFeedback) {
     leadForm.reset();
   });
 }
+
+// Dynamic fleet loader (reads vehicules.json, with local file:// fallback)
+const FALLBACK_FLEET = [
+  {
+    id: 'renault-clio-6',
+    category: 'auto',
+    name: 'Renault Clio 6',
+    badge: 'Permis B · AAC · Supervisée',
+    description: 'Boîte manuelle, double commande et aides à la conduite pour apprendre sereinement en ville comme sur route.',
+    image: ''
+  },
+  {
+    id: 'kawasaki-z500',
+    category: 'moto',
+    name: 'Kawasaki Z500',
+    badge: 'Permis A2',
+    description: 'Roadster maniable et accessible, idéal pour maîtriser les épreuves plateau et prendre plaisir sur les routes du 04.',
+    image: ''
+  },
+  {
+    id: 'kawasaki-z125',
+    category: 'moto',
+    name: 'Kawasaki Z125',
+    badge: 'Permis A1 (125 cm³)',
+    description: 'Moto légère et rassurante pour débuter dès 16 ans en toute sécurité sur plateau et en circulation.',
+    image: ''
+  }
+];
+
+function renderFleet(container, items) {
+  container.innerHTML = '';
+  items.forEach((item) => {
+    const card = document.createElement('article');
+    card.className = 'fleet-card';
+
+    const media = document.createElement('div');
+    media.className = 'fleet-media';
+    if (item.image) {
+      const img = document.createElement('img');
+      img.src = item.image;
+      img.alt = item.name;
+      img.loading = 'lazy';
+      media.appendChild(img);
+    } else {
+      media.innerHTML = `
+        <div class="fleet-placeholder">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+          <span>Emplacement photo (${item.name})</span>
+        </div>
+      `;
+    }
+
+    const body = document.createElement('div');
+    body.className = 'fleet-body';
+
+    const tag = document.createElement('span');
+    tag.className = 'fleet-tag';
+    tag.textContent = item.badge;
+
+    const title = document.createElement('h3');
+    title.textContent = item.name;
+
+    const desc = document.createElement('p');
+    desc.textContent = item.description;
+
+    body.append(tag, title, desc);
+    card.append(media, body);
+    container.appendChild(card);
+  });
+}
+
+const fleetContainers = document.querySelectorAll('[data-fleet-category]');
+if (fleetContainers.length > 0) {
+  fetch('vehicules.json')
+    .then((res) => (res.ok ? res.json() : Promise.reject()))
+    .catch(() => FALLBACK_FLEET)
+    .then((fleet) => {
+      fleetContainers.forEach((container) => {
+        const category = container.dataset.fleetCategory;
+        const filtered = fleet.filter((v) => v.category === category);
+        renderFleet(container, filtered);
+      });
+    });
+}
