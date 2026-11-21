@@ -76,7 +76,7 @@ const DEFAULT_CONFIG = {
       name: 'Renault Clio',
       badge: 'Permis B · AAC · Supervisée',
       description: 'Boîte manuelle, double commande et aides à la conduite récentes pour apprendre sereinement en ville comme sur route.',
-      image: 'assets/clio-auto.jpg',
+      image: '',
       visible: true
     },
     {
@@ -85,7 +85,7 @@ const DEFAULT_CONFIG = {
       name: 'Kawasaki Z500',
       badge: 'Permis A2 (Gros cube)',
       description: 'Roadster maniable et accessible, idéal pour maîtriser les épreuves plateau et prendre plaisir sur les routes du 04.',
-      image: 'assets/kawasaki-z500.jpg',
+      image: '',
       visible: true
     },
     {
@@ -94,7 +94,7 @@ const DEFAULT_CONFIG = {
       name: 'Kawasaki Z125',
       badge: 'Permis A1 (125 cm³)',
       description: 'Moto légère et rassurante pour débuter dès 16 ans en toute sécurité sur plateau et en circulation.',
-      image: 'assets/kawasaki-z125.jpg',
+      image: '',
       visible: true
     }
   ]
@@ -259,7 +259,7 @@ function renderVehiculesAdmin() {
         </div>
         <div class="form-group">
           <label>Chemin ou URL de la photo</label>
-          <input type="text" data-veh-field="image" data-idx="${idx}" value="${escapeHtml(v.image || '')}" placeholder="assets/clio-auto.jpg" />
+          <input type="text" data-veh-field="image" data-idx="${idx}" value="${escapeHtml(v.image || '')}" placeholder="Laisser vide ou coller l'URL d'une photo" />
         </div>
       </div>
       <div class="admin-toggle-row">
@@ -376,7 +376,7 @@ document.getElementById('btn-add-vehicule')?.addEventListener('click', () => {
     name: 'Nouveau véhicule',
     badge: 'Permis B',
     description: 'Description du véhicule.',
-    image: 'assets/clio-auto.jpg',
+    image: '',
     visible: true
   });
   renderVehiculesAdmin();

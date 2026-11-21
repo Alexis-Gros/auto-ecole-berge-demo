@@ -420,7 +420,7 @@ const DEFAULT_SITE_CONFIG = {
       name: 'Renault Clio',
       badge: 'Permis B · AAC · Supervisée',
       description: 'Boîte manuelle, double commande et aides à la conduite récentes pour apprendre sereinement en ville comme sur route.',
-      image: 'assets/clio-auto.jpg',
+      image: '',
       visible: true
     },
     {
@@ -429,7 +429,7 @@ const DEFAULT_SITE_CONFIG = {
       name: 'Kawasaki Z500',
       badge: 'Permis A2 (Gros cube)',
       description: 'Roadster maniable et accessible, idéal pour maîtriser les épreuves plateau et prendre plaisir sur les routes du 04.',
-      image: 'assets/kawasaki-z500.jpg',
+      image: '',
       visible: true
     },
     {
@@ -438,7 +438,7 @@ const DEFAULT_SITE_CONFIG = {
       name: 'Kawasaki Z125',
       badge: 'Permis A1 (125 cm³)',
       description: 'Moto légère et rassurante pour débuter dès 16 ans en toute sécurité sur plateau et en circulation.',
-      image: 'assets/kawasaki-z125.jpg',
+      image: '',
       visible: true
     }
   ]
@@ -549,7 +549,7 @@ function renderFleet(container, items) {
       media.innerHTML = `
         <div class="fleet-placeholder">
           <i data-lucide="image" width="24" height="24" aria-hidden="true"></i>
-          <span>${item.name}</span>
+          <span>Image du véhicule pouvant être insérée par un administrateur ultérieurement</span>
         </div>
       `;
     }
