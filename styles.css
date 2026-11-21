@@ -75,8 +75,14 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 8px 24px -12px rgba(18, 38, 58, 0.14);
 }
 
 .nav-container {
@@ -102,6 +108,15 @@ a {
   display: grid;
   place-items: center;
   border-bottom: 3px solid #d97706;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo-mark svg {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo:hover .logo-mark svg {
+  transform: rotate(35deg);
 }
 
 .logo-text {
@@ -177,8 +192,16 @@ a {
   border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease;
   font-family: inherit;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.985);
 }
 
 .btn-sm {
@@ -440,6 +463,26 @@ a {
   padding: 1.65rem;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.formation-card:hover,
+.detail-card:hover,
+.fleet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -16px rgba(18, 38, 58, 0.2);
+  border-color: #cbd5e1;
+}
+
+.formation-card:hover .icon-box,
+.detail-card:hover .icon-box {
+  background: var(--bg-dark);
+  color: #fff;
+  border-color: var(--bg-dark);
+}
+
+.icon-box {
+  transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
 }
 
 .formation-card h3,
@@ -586,6 +629,7 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .fleet-media {
@@ -879,5 +923,64 @@ a {
 @media (max-width: 560px) {
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Motion design (sobre, fluide, respecte prefers-reduced-motion) */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-kicker,
+.hero h1,
+.hero-subtitle,
+.hero-cta,
+.hero-meta,
+.hero-aside,
+.page-hero h1,
+.page-hero p {
+  animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero h1 { animation-delay: 0.06s; }
+.hero-subtitle, .page-hero p { animation-delay: 0.12s; }
+.hero-cta { animation-delay: 0.18s; }
+.hero-meta { animation-delay: 0.22s; }
+.hero-aside { animation-delay: 0.16s; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kicker,
+  .hero h1,
+  .hero-subtitle,
+  .hero-cta,
+  .hero-meta,
+  .hero-aside,
+  .page-hero h1,
+  .page-hero p {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

@@ -161,5 +161,56 @@ if (fleetContainers.length > 0) {
         const filtered = fleet.filter((v) => v.category === category);
         renderFleet(container, filtered);
       });
+      initReveal();
     });
 }
+
+// Sticky header shadow on scroll
+const header = document.querySelector('.header');
+if (header) {
+  window.addEventListener(
+    'scroll',
+    () => {
+      header.classList.toggle('scrolled', window.scrollY > 12);
+    },
+    { passive: true }
+  );
+}
+
+// Scroll reveal with staggered delays
+function initReveal() {
+  const targets = document.querySelectorAll(
+    '.section-head, .formation-card, .detail-card, .fleet-card, .pillar, .review-card, .info-item, .contact-form-wrap, .cta-banner'
+  );
+  if (targets.length === 0) return;
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
+  );
+
+  targets.forEach((el, index) => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+      const siblingIndex = el.parentElement
+        ? Array.from(el.parentElement.children).indexOf(el)
+        : index;
+      el.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 70, 280)}ms`);
+    }
+    observer.observe(el);
+  });
+}
+
+initReveal();
