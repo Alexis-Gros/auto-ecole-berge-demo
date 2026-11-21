@@ -428,6 +428,26 @@ img {
   aspect-ratio: 4 / 3;
 }
 
+.hero-photo-frame.is-placeholder {
+  background: #e5e7eb;
+  display: grid;
+  place-items: center;
+  padding-bottom: 2.2rem;
+}
+
+.hero-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 .hero-photo-frame img {
   width: 100%;
   height: 100%;
